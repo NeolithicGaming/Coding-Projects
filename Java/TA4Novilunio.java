@@ -13,9 +13,9 @@ public class TA4Novilunio {
     int totalmonthyears=120;
     int totaldayyears=3650;
     int totalyears = 10;
-    char yesorno = 'Y';
+    boolean repeatprogram=true;
 
-    while (yesorno =='Y') 
+    while (repeatprogram) 
     {   
     System.out.print("Enter the bank account balance: ");
     useraccbalance = input.nextDouble();
@@ -47,27 +47,28 @@ public class TA4Novilunio {
     System.out.println("Your account balance after 10 years with yearly compounding interest is: " +yearlycompundbalance);
     System.out.println("Your account balance after 10 years with monthly compounding interest is: " +monthlycompoundbalance);
     System.out.println("Your account balance after 10 years with daily compounding interest is: " +dailycompoundbalance);
-
     System.out.print("Do you want to continue using the program and do another calculation? (Y/N): ");
     String answer = input.nextLine();
     System.out.println("");
-    if (answer == "Y") 
-    {
-        yesorno= 'Y';
-    }
-    if (answer == "y")
-    {
-        yesorno= 'Y';
-    }
-    if (answer == "N") 
-    {
-        yesorno= 'n';
-    }
-    if (answer == "n") 
-    {
-        yesorno= 'n';
-    }
+    switch (answer) {
+        case "y":
+            repeatprogram=true;
+        break;
 
+        case "Y":
+            repeatprogram=true;
+        break;
+
+        case "N":
+            repeatprogram=false;
+        break;
+        case "n":
+            repeatprogram=false;
+        break;
+
+        default:
+            repeatprogram=false;
+    }
     } //end of while bracket
    } //end of public static void bracket
 } //end of public class bracket
